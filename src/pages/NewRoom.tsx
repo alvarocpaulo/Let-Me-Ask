@@ -5,8 +5,13 @@ import logoImg from '../assets/images/logo.svg'
 
 import '../styles/auth.scss';
 import { Button } from '../components/Button';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContex';
+import { useAuth } from '../hooks/useAuth';
 
 export function NewRoom(){
+
+    const { user } = useAuth();
     
     return(
         <div id="page-auth">
@@ -17,7 +22,7 @@ export function NewRoom(){
             </aside>
             <main>
                 <div className="main-content">
-                <img src= {logoImg} alt="Letmeask" />                
+                <img src= {logoImg} alt="Letmeask" />      
                 <h2>Criar uma nova sala</h2>
                 <form>
                     <input type = "text" placeholder = "Nome da sala">
